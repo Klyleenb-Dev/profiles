@@ -2,9 +2,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff - TwayFly Client</title>
+    <title>Staff - TwayFly Client (Owners)</title>
+    
     <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/dsd.png">
+    <meta name="theme-color" content="#0b1120">
+    <meta name="author" content="FFNB_hg">
+
     <style>
+        /* [Seus estilos CSS embutidos aqui] - Mantidos do código original */
         * {
             margin: 0;
             padding: 0;
@@ -17,37 +27,132 @@
             color: #fff;
             overflow-x: hidden;
         }
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8a2be2, #ff00ff);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #8a2be2;
+        }
 
-        /* Estilos da Seção Staff */
+        /* Hero Section */
+        .hero-staff {
+            padding: 100px 40px;
+            text-align: center;
+            background: black;
+            position: relative;
+        }
+        .hero-staff h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #8a2be2, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-staff p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Staff Section */
         .staff-section {
             position: relative;
-            /* Se estiver usando a imagem de fundo */
-            background: url('images/vertical.webp') no-repeat center center;
+            /* MANTENDO O SEU BACKGROUND ORIGINAL */
+            background: url('images/vertical.webp') no-repeat center center; 
             background-size: cover;
             padding: 100px 40px;
             color: #fff;
             overflow: hidden;
-            min-height: 100vh; /* Para garantir que o fundo cubra a tela */
         }
-
-        /* Overlay escura para dar destaque ao conteúdo */
         .staff-section .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.4); 
             z-index: 1;
             pointer-events: none;
         }
-
-        /* Conteúdo acima da overlay */
+        .staff-section .container,
         .staff-section .staff-category {
             position: relative;
             z-index: 2;
         }
-
+        .staff-card {
+            background: rgba(255, 255, 255, 0.08); 
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .staff-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+        }
+        .staff-name {
+            color: #fff;
+            margin-top: 10px;
+        }
+        .staff-role {
+            color: #ddd;
+            font-weight: 500;
+        }
+        .staff-social .social-icon {
+            color: #fff;
+            margin: 0 5px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .staff-social .social-icon:hover {
+            color: #000000;
+        }
         .category-title {
             font-size: 2rem;
             font-weight: 700;
@@ -55,16 +160,14 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            margin: 12;
         }
-
         .category-title i {
-            color: #00ff99;
+            color: #00ff99 ;
             font-size: 1.8rem;
         }
-
         .category-badge {
-            background: #00ff99; /* Cor ajustada para combinar com o tema */
-            color: #000;
+            background: khaki;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -72,13 +175,11 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .staff-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
@@ -90,7 +191,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .staff-card::before {
             content: '';
             position: absolute;
@@ -102,18 +202,15 @@
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
-
         .staff-card:hover {
             transform: translateY(-10px);
             border-color: #00ff99;
             background: rgba(255, 255, 255, 0.06);
-            box-shadow: 0 20px 60px rgba(0, 255, 153, 0.3); /* Sombra verde */
+            box-shadow: 0 20px 60px #00ff99;
         }
-
         .staff-card:hover::before {
             transform: scaleX(1);
         }
-
         .staff-avatar {
             width: 120px;
             height: 120px;
@@ -124,26 +221,52 @@
             overflow: hidden;
             transition: all 0.4s ease;
         }
-
         .staff-card:hover .staff-avatar {
             border-color: white;
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 40px white;
         }
-
         .staff-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
+        .staff-avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #02ad69, #00ff99);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .staff-status {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid rgba(10, 10, 10, 0.9);
+        }
+        .status-online {
+            background: #3ba55d;
+            box-shadow: 0 0 15px #3ba55d;
+        }
+        .status-idle {
+            background: #faa81a;
+            box-shadow: 0 0 15px #faa81a;
+        }
+        .status-offline {
+            background: #747f8d;
+        }
         .staff-name {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 8px;
             color: #fff;
         }
-
         .staff-role {
             font-size: 0.9rem;
             color: #00ff99;
@@ -152,14 +275,19 @@
             letter-spacing: 1px;
             margin-bottom: 15px;
         }
-
+        .staff-bio {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
         .staff-social {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin-top: 20px;
         }
-
         .social-icon {
             width: 40px;
             height: 40px;
@@ -174,65 +302,368 @@
             transition: all 0.3s ease;
             font-size: 16px;
         }
-
         .social-icon:hover {
             background: linear-gradient(135deg, #038a54, #00ff99);
             border-color: transparent;
             color: #fff;
             transform: translateY(-3px);
         }
-
+        .staff-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #8a2be2;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Join Team Section */
+        .join-team {
+            padding: 80px 40px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(8, 202, 112, 0.15) 0%, transparent 70%);
+        }
+        .join-team h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        .join-team p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .join-button {
+            background: linear-gradient(135deg, #0b472e, #00ff99, #0b472e);
+            color: #fff;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .join-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px #0b472e;
+        }
+        /* Responsive */
         @media (max-width: 768px) {
+            .hero-staff h1 {
+                font-size: 2.5rem;
+            }
             .staff-section {
                 padding: 60px 20px;
             }
-
             .staff-grid {
                 grid-template-columns: 1fr;
             }
+            .nav-links {
+                display: none;
+            }
+        }
+        /* Estilos adicionais para o fundo e navbar (MANTIDOS) */
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .background-image {
+            width: 100%;
+            object-fit: cover;
+        }
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 150px 20px 100px 20px;
+            color: #fff;
+        }
+        .navbar {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+        .hero1 {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            overflow: hidden;
         }
     </style>
 </head>
 <body style="height: 100%;">
-    <main>
-        <section class="staff-section">
-            <div class="overlay"></div>
+    
+    <meta name="description" content="Baixe o TwayFly Client e melhore sua performance no Minecraft. FPS Boost, recursos avançados e suporte para Windows, Linux e Mac.">
+    <meta name="keywords" content="Minecraft, TwayFly Client, FPS Boost, Launcher, PvP, Modpack, Windows, Linux, Mac, Lunar Client, Badlion">
+    <meta property="og:title" content="TwayFly Client - Otimize sua Experiência no Minecraft">
+    <meta property="og:description" content="FPS Boost, interface moderna e suporte multiplataforma. Experimente agora o TwayFly Client!">
+    <meta property="og:image" content="https://TwayFlyclient.com/TwayFly-banner.png">
+    <meta property="og:url" content="https://TwayFlyclient.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
-            <div class="staff-category">
+    <div class="background-container">
+        <img src="images/Comp_vertical2.png" alt="Fundo do site" class="background-image">
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/"><img src="images/Horizontal_1.webp" alt="Logo Principal" class="logo-img"></a>
+        </div>
+
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/equipe" class="active">Staff</a> <a href="documentacao-ia.html">Documentação</a>
+            <a href="faq.html">FAQ</a>
+            <a href="https://discord.gg/TwayFly" target="_blank">Discord</a>
+        </div>
+
+        <button class="btn" onclick="openModal()">Download</button>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header id="hero1" class="hero1">
+        </header>
+
+    <main>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <button class="close" onclick="closeModal()">×</button>
+                <div class="modal-header">
+                    <h2>🚧 Em Desenvolvimento</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Estamos trabalhando duro para lançar o <strong>TwayFly Client</strong>. Em breve o download estará disponível!</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="staff-section">
+            <div class="overlay"></div> <div class="container staff-category">
                 <h2 class="category-title">
-                    <i class="fas fa-crown"></i>
+                   <i class="fas fa-crown"></i>
                     Owners
-                    <span class="category-badge">2 Membros</span>
+                    <span class="category-badge" style="background: #ffdb58; color: #000;">2 Membros</span>
                 </h2>
                 <div class="staff-grid">
                     <div class="staff-card">
                         <div class="staff-avatar">
-                            <img src="https://minotar.net/avatar/Eza/80" alt="Skin Eza" class="staff-avatar-img">
+                            <img src="https://minotar.net/avatar/Pentaax/80" alt="Skin Pentaax" class="staff-avatar-img">
+                            <div class="staff-status status-online"></div>
                         </div>
-                        <h3 class="staff-name">Eza</h3>
-                        <p class="staff-role">Owners</p>
+                        <h3 class="staff-name">Pentaax</h3>
+                        <p class="staff-role">Owner</p>
                         <div class="staff-social">
-                            <a href="https://discord.com/invite/YgrFDK6eUF" class="social-icon"><i class="fab fa-discord"></i></a>
-                            <a href="http://www.youtube.com/@KhyleeNB" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://discord.com/users/390684369297211394" class="social-icon"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.youtube.com/@Pentaax" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.twitch.tv/pentaax1" class="social-icon"><i class="fab fa-twitch"></i></a>
+                            <a href="https://www.tiktok.com/@pentaax1" class="social-icon"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
-
                     <div class="staff-card">
                         <div class="staff-avatar">
-                            <img src="https://minotar.net/avatar/Amary/80" alt="Skin Amary" class="staff-avatar-img">
+                            <img src="https://minotar.net/avatar/willzaum/80" alt="Skin willzaum" class="staff-avatar-img">
+                            <div class="staff-status status-online"></div>
                         </div>
-                        <h3 class="staff-name">Amary</h3>
-                        <p class="staff-role">Owners</p>
+                        <h3 class="staff-name">willzaum</h3>
+                        <p class="staff-role">Owner</p>
                         <div class="staff-social">
-                            <a href="https://discord.com/invite/YgrFDK6eUF" class="social-icon"><i class="fab fa-discord"></i></a>
-                            <a href="http://www.youtube.com/@KhyleeNB" class="social-icon"><i class="fab fa-youtube"></i></a
+                            <a href="https://discord.com/users/1108108774029402242" class="social-icon"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.youtube.com/channel/UCD2PPGILP1KPgdwDtt1W9dg" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/@willzaum" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+        <div id="vagasModal" class="modal">
+            <div class="modal-content">
+                <button class="close" onclick="closeVagasModal()">×</button>
+                <div class="modal-header">
+                    <h2>Vagas em Breve</h2>
+                </div>
+                <div class="modal-body">
+                    <p>As vagas para staff serão abertas em breve! Fique atento em nosso discord.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="closeVagasModal()">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="join-team">
+            <h2>Faça parte da nossa equipe!</h2>
+            <p>Estamos sempre em busca de novos talentos para integrar nossa equipe. Se você é apaixonado pelo que faz, confira nossas vagas e junte-se a nós!</p>
+            <a href="#" class="join-button" onclick="openVagasModal()">
+                <i class="fas fa-paper-plane"></i>
+                Ver Vagas Disponíveis
+            </a>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-column footer-brand">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon">
+                            <img src="images/dsd.png" alt="TwayFly Client Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            </div>
+                            <span class="footer-logo-text">TwayFly Client</span>
+                        </div>
+                        <p class="footer-description">
+                            A experiência definitiva para Minecraft. Performance extrema, mods essenciais e interface moderna.
+                        </p>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">
+                            <i class="fas fa-cube"></i>
+                            Produto
+                        </h4>
+                        <ul class="footer-links">
+                            <li><a href="#features"><i class="fas fa-chevron-right"></i> Recursos</a></li>
+                            <li><a href="#download"><i class="fas fa-chevron-right"></i> Download</a></li>
+                            <li><a href="#loja"><i class="fas fa-chevron-right"></i> Loja</a></li>
+                            <li><a href="#updates"><i class="fas fa-chevron-right"></i> Atualizações</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">
+                            <i class="fas fa-life-ring"></i>
+                            Suporte
+                        </h4>
+                        <ul class="footer-links">
+                            <li><a href="#docs"><i class="fas fa-chevron-right"></i> Documentação</a></li>
+                            <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                            <li><a href="#community"><i class="fas fa-chevron-right"></i> Comunidade</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                            <li><a href="#status"><i class="fas fa-chevron-right"></i> Status</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-title">
+                            <i class="fas fa-shield-alt"></i>
+                            Legal
+                        </h4>
+                        <ul class="footer-links">
+                            <li><a href="#privacy"><i class="fas fa-chevron-right"></i> Privacidade</a></li>
+                            <li><a href="#terms"><i class="fas fa-chevron-right"></i> Termos de Uso</a></li>
+                            <li><a href="#license"><i class="fas fa-chevron-right"></i> Licença</a></li>
+                            <li><a href="#cookies"><i class="fas fa-chevron-right"></i> Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left">
+                        <p class="footer-copyright">
+                            © 2025 <span class="gradient-text">TwayFly Client</span>. Todos os direitos reservados.
+                        </p>
+                        <p class="footer-disclaimer">
+                            <i class="fas fa-info-circle"></i> Não afiliado com Mojang ou Microsoft
+                        </p>
+                    </div>
+                    <div class="footer-bottom-right">
+                        <div class="footer-credits">
+                            <span>Desenvolvido com <i class="fas fa-heart heart-beat"></i> por <strong class="gradient-text">FFNB</strong></span>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </section>
+            <div class="footer-background">
+                <div class="footer-glow footer-glow-1"></div>
+                <div class="footer-glow footer-glow-2"></div>
+                <div class="footer-grid"></div>
+            </div>
+        </footer>
     </main>
 
-    </body>
+    <script src="js/particles.min.js"></script>
+    <script src="js/vanilla-tilt.min.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/alerts.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Funções para Modais (openModal, closeModal, openVagasModal, closeVagasModal)
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        function openVagasModal() {
+            document.getElementById('vagasModal').style.display = 'flex';
+        }
+        function closeVagasModal() {
+            document.getElementById('vagasModal').style.display = 'none';
+        }
+
+        // Script para Hamburger (se não estiver no main.js)
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".navbar .links");
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+                hamburger.classList.toggle("active");
+            });
+        }
+    </script>
+</body>
 </html>
