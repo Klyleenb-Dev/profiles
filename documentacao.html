@@ -3,43 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentação Oficial - Twayfly Client</title> 
-    <link rel="stylesheet" href="css/style.css"> 
+    <title>Documentação IA | TwayFly Client</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav aria-label="Navegação principal do site">
-            <a href="index.html">Início</a>
-            <a href="equipe.html">Equipe</a>
-            <a href="documentacao.html" aria-current="page">Documentação</a> 
-            <a href="faq.html">FAQ</a>
-            <a href="https://discord.gg/SEULINKAQUI" target="_blank" rel="noopener noreferrer">Discord</a> 
-        </nav>
-    </header>
 
-    <main class="content">
-        <h1>Documentação Oficial - Twayfly Client</h1>
+    <header>
+        </header>
+
+    <main class="ia-doc-wrapper container">
         
-        <section id="proibicao-mods" class="doc-section">
-            <h2>Proibição de Modificações (Mods)</h2>
-            <p>É **estritamente proibido** criar, distribuir ou utilizar qualquer modificação (mod ou addon) que utilize o código-fonte, assets ou bibliotecas proprietárias do Twayfly Client ou que altere a funcionalidade pretendida **sem autorização expressa**.</p>
-        </section>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-book"></i> Índice</h3>
+            </div>
+            <nav class="doc-nav">
+                <a href="#intro" class="active">Introdução à IA</a>
+                <a href="#regras">Regras de Uso e Proibições</a>
+                <a href="#funcionalidades">Funcionalidades do TwayFly</a>
+                <a href="#api">Integração API (Devs)</a>
+                <a href="#faq-doc">FAQ e Solução de Problemas</a>
+            </nav>
+            <div class="sidebar-search">
+                <input type="text" placeholder="Pesquisar na Documentação...">
+                <i class="fas fa-search"></i>
+            </div>
+        </aside>
+
+        <article class="doc-content">
+
+            <section id="intro" class="doc-section">
+                <h1 class="doc-title">Documentação Avançada: O Cliente TwayFly</h1>
+                <p class="doc-intro">Bem-vindo à documentação oficial. Este guia é o ponto de partida para entender a arquitetura do cliente, regras de uso da IA e funcionalidades avançadas.</p>
+                <div class="alert-box info">
+                    <i class="fas fa-lightbulb"></i>
+                    <strong>Nota:</strong> A IA do TwayFly opera em conformidade estrita com as regras de integridade do servidor.
+                </div>
+            </section>
+            
+            <section id="regras" class="doc-section">
+                <h2>1. Regras de Uso e Proibições</h2>
+                <h3 id="proibicao-mods">1.1. Proibição de Modificações Externas</h3>
+                <p>O uso de qualquer software de terceiros ou modificação de arquivos que interajam com o cliente é <strong class="text-accent">estritamente proibido</strong>. A detecção resultará em banimento imediato e permanente.</p>
+                
+                <h3>1.2. Interação com a IA (Anti-Cheat)</h3>
+                <p>Nossa IA monitora padrões anormais de comportamento de jogo (como movimentos robóticos, reações em milissegundos, etc.) para garantir um ambiente justo. A detecção é baseada em *machine learning* e é altamente precisa.</p>
+            </section>
+            
+            <section id="funcionalidades" class="doc-section">
+                <h2>2. Funcionalidades do TwayFly</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Sistema Anti-DDoS Avançado</h4>
+                        <p>Proteção de camada 7 com balanceamento de carga inteligente para manter a conexão estável.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-server"></i>
+                        <h4>Conectividade Otimizada</h4>
+                        <p>Algoritmos de roteamento que garantem o menor ping possível para a maioria dos usuários.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
         
-        <section id="proibicao-injections" class="doc-section">
-            <h2>Proibição de Injeção e Hacks</h2>
-            <p>É **totalmente proibido** o uso de injectors, hacks, cheats ou qualquer software de terceiros que interaja, manipule ou extraia dados do Twayfly Client para obter **vantagem indevida** ou violar a integridade do jogo.</p>
-        </section>
-        
-        <section id="proibicao-distribuicao" class="doc-section">
-            <h2>Proibição de Distribuição de Versões Não Autorizadas</h2>
-            <p>É proibido redistribuir o client sob um nome diferente (**rebrand**) ou hospedar o download do client em qualquer site que **não seja o oficial**.</p>
-        </section>
-        
-        <section id="anti-cheat-protection" class="doc-section">
-            <h2>Proteção de Tecnologia Anti-Trapaça (Anti-Cheat)</h2>
-            <p>O Twayfly Client pode conter tecnologia proprietária de detecção e prevenção de trapaças. Qualquer tentativa de contornar, desativar ou reverter a engenharia dessa tecnologia anti-cheat constitui uma **violação grave** e levará a **ação legal e banimento permanente** do serviço associado.</p>
-        </section>
     </main>
+
+    <footer>
+        </footer>
     
-    </body>
+</body>
 </html>
