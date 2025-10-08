@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação IA | TwayFly Client</title>
+    
     <link rel="stylesheet" href="style.css"> 
+    
+    <link rel="stylesheet" href="doc-styles.css"> 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -83,6 +87,7 @@
                 
                 <section id="funcionalidades" class="doc-section">
                     <h2>2. Funcionalidades do TwayFly</h2>
+                    <p>O cliente TwayFly não é apenas um launcher; é uma suite de otimização e segurança. Algumas das funcionalidades-chave incluem:</p>
                     <div class="feature-list">
                         <div class="feature-item">
                             <i class="fas fa-shield-alt"></i>
@@ -97,7 +102,52 @@
                     </div>
                 </section>
 
-                </article>
+                <section id="api" class="doc-section">
+                    <h2>3. Integração API (Para Desenvolvedores)</h2>
+                    <p>Oferecemos uma API RESTful para desenvolvedores que desejam interagir com o sistema de autenticação e perfis do cliente. O endpoint base é `https://api.twayfly.com/v1/`.</p>
+                    
+                    <h3>3.1. Autenticação</h3>
+                    <p>Todas as requisições devem incluir um token de API válido no cabeçalho `Authorization: Bearer [token]`. Tokens podem ser gerados no painel de controle do desenvolvedor.</p>
+
+                    <h3>3.2. Exemplo de Código (Pseudocódigo)</h3>
+                    <pre style="background: #1a1a1a; padding: 15px; border-radius: 8px; color: #00ff99; overflow-x: auto;"><code>GET /status/server-load
+Host: api.twayfly.com
+Authorization: Bearer YOUR_API_TOKEN
+
+// Resposta
+{
+    "status": "online",
+    "load_percentage": 0.15,
+    "region": "south-america"
+}</code></pre>
+                </section>
+
+                <section id="faq-doc" class="doc-section">
+                    <h2>4. FAQ e Solução de Problemas</h2>
+                    <p>Encontre respostas para as dúvidas mais comuns sobre instalação, performance e erros conhecidos.</p>
+                    <div class="faq-container" style="max-width: 100%; padding: 0;">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span><i class="fas fa-question-circle"></i> Meu ping está alto. Como resolver?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Verifique se o cliente está configurado para usar o algoritmo de otimização de rota. Em alguns casos, desativar temporariamente o Anti-DDoS pode ajudar a diagnosticar problemas de latência.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span><i class="fas fa-question-circle"></i> Onde encontro a versão mais recente?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>A versão mais recente está sempre disponível na página de <a href="#" class="text-accent">Download</a>. O cliente deve se auto-atualizar, mas se houver problemas, tente um download limpo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </article>
             
         </main>
     </div>
