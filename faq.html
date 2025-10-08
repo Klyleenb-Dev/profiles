@@ -163,14 +163,16 @@
     </footer>
 
     <script>
-        // Função para alternar o menu hamburger
+        // Função para alternar o menu hamburger (mobile)
         const hamburger = document.querySelector(".hamburger");
         const navLinks = document.querySelector(".navbar .links");
 
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
-        });
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+        }
         
         // Função para o FAQ (Abrir/Fechar)
         const faqQuestions = document.querySelectorAll(".faq-question");
@@ -179,7 +181,7 @@
             question.addEventListener("click", () => {
                 const faqItem = question.parentElement;
                 
-                // Fecha todos os outros itens
+                // Fecha todos os outros itens se já estiverem abertos
                 document.querySelectorAll(".faq-item").forEach(item => {
                     if (item !== faqItem) {
                         item.classList.remove("active");
